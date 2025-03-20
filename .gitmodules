@@ -1,3 +1,6 @@
 [submodule "word_counter/promptset"]
 	path = word_counter/promptset
 	url = https://github.com/pisterlabs/promptset.git
+[submodule "word_counter/awesome-claude-prompts"]
+	path = word_counter/awesome-claude-prompts
+	url = https://github.com/langgptai/awesome-claude-prompts
