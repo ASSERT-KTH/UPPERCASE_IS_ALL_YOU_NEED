@@ -1,0 +1,46 @@
+def move_one_ball(arr):
+    """WE HAVE AN ARRAY 'ARR' OF N INTEGERS ARR[1], ARR[2], ..., ARR[N].THE
+    NUMBERS IN THE ARRAY WILL BE RANDOMLY ORDERED. YOUR TASK IS TO DETERMINE IF
+    IT IS POSSIBLE TO GET AN ARRAY SORTED IN NON-DECREASING ORDER BY PERFORMING 
+    THE FOLLOWING OPERATION ON THE GIVEN ARRAY:
+        YOU ARE ALLOWED TO PERFORM RIGHT SHIFT OPERATION ANY NUMBER OF TIMES.
+    
+    ONE RIGHT SHIFT OPERATION MEANS SHIFTING ALL ELEMENTS OF THE ARRAY BY ONE
+    POSITION IN THE RIGHT DIRECTION. THE LAST ELEMENT OF THE ARRAY WILL BE MOVED TO
+    THE STARTING POSITION IN THE ARRAY I.E. 0TH INDEX. 
+
+    IF IT IS POSSIBLE TO OBTAIN THE SORTED ARRAY BY PERFORMING THE ABOVE OPERATION
+    THEN RETURN TRUE ELSE RETURN FALSE.
+    IF THE GIVEN ARRAY IS EMPTY THEN RETURN TRUE.
+
+    NOTE: THE GIVEN LIST IS GUARANTEED TO HAVE UNIQUE ELEMENTS.
+
+    FOR EXAMPLE:
+    
+    MOVE_ONE_BALL([3, 4, 5, 1, 2])==>TRUE
+    EXPLANATION: BY PERFORMIN 2 RIGHT SHIFT OPERATIONS, NON-DECREASING ORDER CAN
+                 BE ACHIEVED FOR THE GIVEN ARRAY.
+    MOVE_ONE_BALL([3, 5, 4, 1, 2])==>FALSE
+    EXPLANATION:IT IS NOT POSSIBLE TO GET NON-DECREASING ORDER FOR THE GIVEN
+                ARRAY BY PERFORMING ANY NUMBER OF RIGHT SHIFT OPERATIONS.
+                
+    """
+    n = len(arr)
+    if n == 0:
+        return True
+
+    for _ in range(n):
+        sorted_flag = True
+        for i in range(n - 1):
+            if arr[i] > arr[i + 1]:
+                sorted_flag = False
+                break
+        if sorted_flag:
+            return True
+        
+        last_element = arr[-1]
+        for i in range(n - 1, 0, -1):
+            arr[i] = arr[i - 1]
+        arr[0] = last_element
+
+    return False

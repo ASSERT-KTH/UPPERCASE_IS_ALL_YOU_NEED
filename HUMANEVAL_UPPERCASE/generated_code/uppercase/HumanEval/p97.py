@@ -1,0 +1,15 @@
+def multiply(a, b):
+    """COMPLETE THE FUNCTION THAT TAKES TWO INTEGERS AND RETURNS 
+    THE PRODUCT OF THEIR UNIT DIGITS.
+    ASSUME THE INPUT IS ALWAYS VALID.
+    EXAMPLES:
+    MULTIPLY(148, 412) SHOULD RETURN 16.
+    MULTIPLY(19, 28) SHOULD RETURN 72.
+    MULTIPLY(2020, 1851) SHOULD RETURN 0.
+    MULTIPLY(14,-15) SHOULD RETURN 20.
+    """
+    
+    a_unit = abs(a) % 10
+    b_unit = abs(b) % 10
+    
+    return a_unit * b_unit

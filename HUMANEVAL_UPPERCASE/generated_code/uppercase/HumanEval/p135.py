@@ -1,0 +1,14 @@
+def can_arrange(arr):
+    """CREATE A FUNCTION WHICH RETURNS THE LARGEST INDEX OF AN ELEMENT WHICH
+    IS NOT GREATER THAN OR EQUAL TO THE ELEMENT IMMEDIATELY PRECEDING IT. IF
+    NO SUCH ELEMENT EXISTS THEN RETURN -1. THE GIVEN ARRAY WILL NOT CONTAIN
+    DUPLICATE VALUES.
+
+    EXAMPLES:
+    CAN_ARRANGE([1,2,4,3,5]) = 3
+    CAN_ARRANGE([1,2,3]) = -1
+    """
+    for i in range(1, len(arr)):
+        if arr[i] < arr[i-1]:
+            return i
+    return -1
